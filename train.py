@@ -49,8 +49,7 @@ class TrainingArguments:
     report_to: Optional[str] = field(default="wandb") 
     max_seq_length: int = field(default=512)
     dataset_text_file: str = field(default = 'text')
-    lora_output_dir: str = field(default = './results/lora_adapter')
-    optimizer: str = field(default = 'adamw')
+    optim: str = field(default = 'adamw')
 
 
 def main(model_args, training_args):
@@ -112,7 +111,7 @@ def main(model_args, training_args):
     trainer.train()
     trainer.save_model(training_args.output_dir) #모델 저장 
     
-    ADAPTER_MODEL = training_args.lora_output_dir
+    ADAPTER_MODEL = './results/lora_adapter'
     
     trainer.model.save_pretrained(ADAPTER_MODEL)
     tokenizer.save_pretrained(ADAPTER_MODEL)

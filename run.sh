@@ -33,3 +33,4 @@ python train.py \
 --max_seq_length 1024 \
 --dataset_text_file "text" \
 --compute_dtype "bfloat16" \
+--optim "adamw" \
