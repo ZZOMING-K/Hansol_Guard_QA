@@ -48,7 +48,7 @@ class TrainingArguments:
     report_to: Optional[str] = field(default="wandb")
     dataset_text_field: str = field(default = 'text')
     optim: str = field(default = 'paged_adamw_8bit')
-    
+    run_name : str = field(default = 'sft')
 
 
 def main(model_args, training_args):

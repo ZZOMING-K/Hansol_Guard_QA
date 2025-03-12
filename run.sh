@@ -7,12 +7,11 @@ python train.py \
 --use_flash_attn False \
 --use_4bit_quantization True \
 --compute_dtype "bfloat16" \
---output_dir \
+--output_dir "./results/models" \
 --per_device_train_batch_size 1 \
 --per_device_eval_batch_size 1 \
 --gradient_accumulation_steps 8 \
 --learning_rate 2e-5 \
---max_steps 10 \
 --num_train_epochs 1 \
 --logging_steps 10 \
 --logging_strategy "steps" \
@@ -28,4 +27,4 @@ python train.py \
 --push_to_hub True \
 --report_to "wandb" \
 --dataset_text_field "text" \
---optim "paged_adamw_32bit" \
+--optim "paged_adamw_32bit" 
